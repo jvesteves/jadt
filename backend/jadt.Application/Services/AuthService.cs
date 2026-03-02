@@ -1,20 +1,28 @@
 ﻿using jadt.Application.DTOs.Auth;
 using jadt.Domain.Entities;
 using jadt.Domain.Interfaces.Repositories;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Authentication;
+using System.Security.Claims;
+using System.Text;
 namespace jadt.Application.Services
 {
     public class AuthService
     {
         private readonly IUserRepository _userRepository;
-        public AuthService(IUserRepository userRepository) {
-        _userRepository = userRepository;
+        private readonly IConfiguration _configuration;
+        public AuthService(IUserRepository userRepository, IConfiguration configuration)
+        {
+            _userRepository = userRepository;
+            _configuration = configuration;
         }
 
         public async Task Register(RegisterRequest registerRequest)
         {
             var verifyRegisteredUser = await _userRepository.FindUserByEmail(registerRequest.Email);
-            if (verifyRegisteredUser != null) 
+            if (verifyRegisteredUser != null)
             {
                 throw new InvalidOperationException("An account with this email address already exists.");
             }
@@ -39,7 +47,31 @@ namespace jadt.Application.Services
                 throw new AuthenticationException("Invalid email or password. Please try again.");
             }
 
-            throw new NotImplementedException("Token section not implemented");
+            return CreateToken(user);
+        }
+
+        private string CreateToken(User user)
+        {
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Name, user.Name)
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Secret"]!));
+
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.UtcNow.AddHours(double.Parse(_configuration["Jwt:ExpirationHours"]!)),
+                signingCredentials: credentials
+                );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }
