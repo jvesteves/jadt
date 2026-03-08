@@ -1,4 +1,4 @@
-﻿using jadt.Domain.Entities;
+﻿using jadt.Domain.Entities.Auth;
 
 namespace jadt.Domain.Interfaces.Repositories
 {

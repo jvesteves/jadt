@@ -1,4 +1,4 @@
-﻿using jadt.Domain.Entities;
+﻿using jadt.Domain.Entities.Auth;
 using jadt.Domain.Interfaces.Repositories;
 using jadt.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;

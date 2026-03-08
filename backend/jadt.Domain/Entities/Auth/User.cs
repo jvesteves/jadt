@@ -1,4 +1,4 @@
-﻿namespace jadt.Domain.Entities
+﻿namespace jadt.Domain.Entities.Auth
 {
     public class User : BaseEntity
     {

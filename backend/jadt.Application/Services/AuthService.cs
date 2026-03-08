@@ -1,5 +1,5 @@
 ﻿using jadt.Application.DTOs.Auth;
-using jadt.Domain.Entities;
+using jadt.Domain.Entities.Auth;
 using jadt.Domain.Interfaces.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
