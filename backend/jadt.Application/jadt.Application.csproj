@@ -1,11 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\jadt.Domain\jadt.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DTOs\Auth\" />
+    <Folder Include="DTOs\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
