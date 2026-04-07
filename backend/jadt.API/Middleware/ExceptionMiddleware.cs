@@ -1,4 +1,6 @@
-﻿namespace jadt.API.Middleware
+﻿using System.Security.Authentication;
+
+namespace jadt.API.Middleware
 {
     public class ExceptionMiddleware
     {
@@ -21,6 +23,13 @@
                 context.Response.ContentType = "application/json";
                 await context.Response.WriteAsync("{\"error\":\"" + ex.Message + "\"}");
             }
+            catch(AuthenticationException ex)
+            {
+                context.Response.StatusCode = 401;
+                context.Response.ContentType = "application/json";
+                await context.Response.WriteAsync("{\"error\":\"" + ex.Message + "\"}");
+            }
+
             catch (Exception)
             {
                 context.Response.StatusCode = 500;
