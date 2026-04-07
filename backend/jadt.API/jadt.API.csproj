@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\jadt.Application\jadt.Application.csproj" />
-    <ProjectReference Include="..\jadt.Infrastructure\jadt.Infrastructure.csproj" />
+    <ProjectReference Include="..\jadt.Auth.Application\jadt.Auth.Application.csproj" />
+    <ProjectReference Include="..\jadt.Auth.Infrastructure\jadt.Auth.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,13 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jadt.Domain", "jadt.Domain\jadt.Domain.csproj", "{0A8B3802-3C10-4F7A-9B8A-70F7D4568C0F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jadt.Application", "jadt.Application\jadt.Application.csproj", "{A3D0FE29-0874-48FA-B236-93CECDB01005}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jadt.Infrastructure", "jadt.Infrastructure\jadt.Infrastructure.csproj", "{98D8C7E8-EB6E-4D38-B357-0E3A9071D26F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jadt.API", "jadt.API\jadt.API.csproj", "{C6545DC8-72E8-4CA2-97AF-09F142EA5C8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jadt.Shared.Domain", "jadt.Shared.Domain\jadt.Shared.Domain.csproj", "{4F014E31-CBE7-492F-A713-0639B5BB0BFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jadt.Auth.Domain", "jadt.Auth.Domain\jadt.Auth.Domain.csproj", "{34D2A905-360E-4A31-9954-2B39633919E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jadt.Auth.Application", "jadt.Auth.Application\jadt.Auth.Application.csproj", "{6D84492A-A2F3-41A8-92BD-F4BF84F69A1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jadt.Auth.Infrastructure", "jadt.Auth.Infrastructure\jadt.Auth.Infrastructure.csproj", "{457A5EA4-6903-46FD-81A9-CB50C0487A89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jadt.DailyKanban.Domain", "jadt.DailyKanban.Domain\jadt.DailyKanban.Domain.csproj", "{E32E9D10-32E4-4430-BE2C-F5EF9BB519BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jadt.DailyKanban.Application", "jadt.DailyKanban.Application\jadt.DailyKanban.Application.csproj", "{A852DFC3-4CF4-40B6-9421-398F4BB45F34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jadt.DailyKanban.Infrastructure", "jadt.DailyKanban.Infrastructure\jadt.DailyKanban.Infrastructure.csproj", "{23CCB550-07DA-42B1-84C0-11F21469B677}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,21 +28,37 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0A8B3802-3C10-4F7A-9B8A-70F7D4568C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A8B3802-3C10-4F7A-9B8A-70F7D4568C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A8B3802-3C10-4F7A-9B8A-70F7D4568C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A8B3802-3C10-4F7A-9B8A-70F7D4568C0F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3D0FE29-0874-48FA-B236-93CECDB01005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3D0FE29-0874-48FA-B236-93CECDB01005}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3D0FE29-0874-48FA-B236-93CECDB01005}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3D0FE29-0874-48FA-B236-93CECDB01005}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98D8C7E8-EB6E-4D38-B357-0E3A9071D26F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98D8C7E8-EB6E-4D38-B357-0E3A9071D26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98D8C7E8-EB6E-4D38-B357-0E3A9071D26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98D8C7E8-EB6E-4D38-B357-0E3A9071D26F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C6545DC8-72E8-4CA2-97AF-09F142EA5C8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C6545DC8-72E8-4CA2-97AF-09F142EA5C8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6545DC8-72E8-4CA2-97AF-09F142EA5C8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6545DC8-72E8-4CA2-97AF-09F142EA5C8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F014E31-CBE7-492F-A713-0639B5BB0BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F014E31-CBE7-492F-A713-0639B5BB0BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F014E31-CBE7-492F-A713-0639B5BB0BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F014E31-CBE7-492F-A713-0639B5BB0BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34D2A905-360E-4A31-9954-2B39633919E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D2A905-360E-4A31-9954-2B39633919E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34D2A905-360E-4A31-9954-2B39633919E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34D2A905-360E-4A31-9954-2B39633919E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D84492A-A2F3-41A8-92BD-F4BF84F69A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D84492A-A2F3-41A8-92BD-F4BF84F69A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D84492A-A2F3-41A8-92BD-F4BF84F69A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D84492A-A2F3-41A8-92BD-F4BF84F69A1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{457A5EA4-6903-46FD-81A9-CB50C0487A89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{457A5EA4-6903-46FD-81A9-CB50C0487A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{457A5EA4-6903-46FD-81A9-CB50C0487A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{457A5EA4-6903-46FD-81A9-CB50C0487A89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E32E9D10-32E4-4430-BE2C-F5EF9BB519BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E32E9D10-32E4-4430-BE2C-F5EF9BB519BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E32E9D10-32E4-4430-BE2C-F5EF9BB519BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E32E9D10-32E4-4430-BE2C-F5EF9BB519BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A852DFC3-4CF4-40B6-9421-398F4BB45F34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A852DFC3-4CF4-40B6-9421-398F4BB45F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A852DFC3-4CF4-40B6-9421-398F4BB45F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A852DFC3-4CF4-40B6-9421-398F4BB45F34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23CCB550-07DA-42B1-84C0-11F21469B677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23CCB550-07DA-42B1-84C0-11F21469B677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23CCB550-07DA-42B1-84C0-11F21469B677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23CCB550-07DA-42B1-84C0-11F21469B677}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

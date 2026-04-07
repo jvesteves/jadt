@@ -1,5 +1,5 @@
-﻿using jadt.Application.DTOs.Auth;
-using jadt.Application.Services;
+﻿using jadt.Auth.Application.DTOs;
+using jadt.Auth.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace jadt.API.Controllers
